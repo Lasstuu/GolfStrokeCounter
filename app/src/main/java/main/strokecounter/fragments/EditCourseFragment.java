@@ -3,12 +3,17 @@ package main.strokecounter.fragments;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
+import main.strokecounter.CourseListAdapter;
 import main.strokecounter.R;
+import main.strokecounter.Storage;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -16,6 +21,10 @@ import main.strokecounter.R;
  * create an instance of this fragment.
  */
 public class EditCourseFragment extends Fragment {
+
+
+    private Storage storage;
+    private RecyclerView recyclerView;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -30,15 +39,6 @@ public class EditCourseFragment extends Fragment {
         // Required empty public constructor
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment EditCourseFragment.
-     */
-    // TODO: Rename and change types and number of parameters
     public static EditCourseFragment newInstance(String param1, String param2) {
         EditCourseFragment fragment = new EditCourseFragment();
         Bundle args = new Bundle();
@@ -60,7 +60,20 @@ public class EditCourseFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_edit_course, container, false);
+        View view = inflater.inflate(R.layout.fragment_edit_course, container, false);
+        //setContentView(R.layout.activity_course_list);
+
+        storage = storage.getInstance();
+
+        recyclerView = view.findViewById(R.id.rvCourseList);
+        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+        recyclerView.setAdapter(new CourseListAdapter(getContext(), storage.getCourseList().get(storage.getCourseList().size()-1).getHoleList()));
+        return view;
     }
+
+    public void onResume(){
+        super.onResume();
+        recyclerView.setAdapter(new CourseListAdapter(getContext(), storage.getCourseList().get(storage.getCourseList().size()-1).getHoleList()));
+    }
+
 }

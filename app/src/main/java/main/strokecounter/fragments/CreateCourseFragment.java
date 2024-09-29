@@ -7,8 +7,13 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
 
+import main.strokecounter.Course;
 import main.strokecounter.R;
+import main.strokecounter.Storage;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -61,6 +66,23 @@ public class CreateCourseFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_create_course, container, false);
+        View view = inflater.inflate(R.layout.fragment_create_course, container, false);
+        Button btnCreateCourse = view.findViewById(R.id.btnCreateCourse);
+        btnCreateCourse.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                createCourse(view);
+            }
+        });
+        return view;
     }
+    public void createCourse(View view){
+        EditText etCourseName = view.findViewById(R.id.etCourseName);
+        EditText etnHoleNumber = view.findViewById(R.id.etnHoleNumber);
+        //System.out.println(Integer.parseInt(etnHoleNumber.getText().toString()));
+
+        Storage.getInstance().addCourse(new Course(etCourseName.getText().toString(), Integer.parseInt(etnHoleNumber.getText().toString())));
+    }
+
+
 }
