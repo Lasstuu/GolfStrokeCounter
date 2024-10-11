@@ -11,7 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
-import main.strokecounter.CourseListAdapter;
+import main.strokecounter.holeList.CourseListAdapter;
 import main.strokecounter.R;
 import main.strokecounter.Storage;
 
@@ -62,12 +62,19 @@ public class EditCourseFragment extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_edit_course, container, false);
         //setContentView(R.layout.activity_course_list);
-
+        Button btnSumbitCourse = view.findViewById(R.id.btnSumbitCourse);
+        btnSumbitCourse.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //setCoursePars(view);
+            }
+        });
         storage = storage.getInstance();
 
         recyclerView = view.findViewById(R.id.rvCourseList);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         recyclerView.setAdapter(new CourseListAdapter(getContext(), storage.getCourseList().get(storage.getCourseList().size()-1).getHoleList()));
+
         return view;
     }
 

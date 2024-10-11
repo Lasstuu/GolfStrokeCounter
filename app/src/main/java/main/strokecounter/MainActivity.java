@@ -6,6 +6,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
+import main.strokecounter.courseSelection.CourseSelectionActivity;
+import main.strokecounter.courseStrokeCounting.CourseStrokeActivity;
+
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -22,4 +25,5 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, CourseSelectionActivity.class);
         startActivity(intent);
     }
+
 }

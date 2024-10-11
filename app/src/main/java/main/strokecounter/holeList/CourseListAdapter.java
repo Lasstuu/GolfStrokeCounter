@@ -1,14 +1,16 @@
-package main.strokecounter;
+package main.strokecounter.holeList;
 
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
-import android.widget.Button;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
+
+import main.strokecounter.Hole;
+import main.strokecounter.R;
 
 public class CourseListAdapter extends RecyclerView.Adapter<CourseViewHolder> {
 
