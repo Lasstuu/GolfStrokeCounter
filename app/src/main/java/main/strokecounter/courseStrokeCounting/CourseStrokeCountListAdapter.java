@@ -32,18 +32,19 @@ public class CourseStrokeCountListAdapter extends RecyclerView.Adapter<CourseStr
 
     @Override
     public void onBindViewHolder(@NonNull CourseStrokeCountViewHolder holder, int position) {
-        holder.holeNumberStroke.setText(String.valueOf(position + 1));
-        holder.holeParStroke.setText(String.valueOf(holes.get(position).getHolePar()));
-       // holder.btnPlusStroke.setOnClickListener(view -> {
-//            holes.get(position).setHolePar(holes.get(position).getHolePar() + 1);
-//            notifyDataSetChanged();
-        //});
-        //holder.btnMinusStroke.setOnClickListener(view -> {
-//            if(holes.get(position).getHolePar() != 0) {
-//                holes.get(position).setHolePar(holes.get(position).getHolePar() + -1);
-//            }
-//            notifyDataSetChanged();
-        //});
+        holder.holeNumberStroke.setText("Hole: " + String.valueOf(position + 1));
+        holder.holeParStroke.setText("Par: " + String.valueOf(holes.get(position).getHolePar()));
+        holder.strokeCount.setText("Strokes: " + String.valueOf(holes.get(position).getHoleStrokes()));
+       holder.btnPlusStroke.setOnClickListener(view -> {
+            holes.get(position).setHoleStrokes(holes.get(position).getHoleStrokes() + 1);
+            notifyDataSetChanged();
+        });
+        holder.btnMinusStroke.setOnClickListener(view -> {
+            if(holes.get(position).getHoleStrokes() != 0) {
+                holes.get(position).setHoleStrokes(holes.get(position).getHoleStrokes() + -1);
+            }
+            notifyDataSetChanged();
+        });
     }
 
     @Override

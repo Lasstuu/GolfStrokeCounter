@@ -32,8 +32,8 @@ public class CourseListAdapter extends RecyclerView.Adapter<CourseViewHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull CourseViewHolder holder, int position) {
-        holder.holeNumber.setText(String.valueOf(position + 1));
-        holder.holePar.setText(String.valueOf(holes.get(position).getHolePar()));
+        holder.holeNumber.setText(String.valueOf("Hole: " + (position + 1)));
+        holder.holePar.setText(String.valueOf("Par: " + holes.get(position).getHolePar()));
         holder.btnPlus.setOnClickListener(view -> {
             holes.get(position).setHolePar(holes.get(position).getHolePar() + 1);
            notifyDataSetChanged();

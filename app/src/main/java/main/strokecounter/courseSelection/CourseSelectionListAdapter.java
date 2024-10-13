@@ -37,7 +37,7 @@ public class CourseSelectionListAdapter extends RecyclerView.Adapter<CourseSelec
     @Override
     public void onBindViewHolder(@NonNull CourseSelectionViewHolder holder, int position) {
         holder.txtCourseSelName.setText(String.valueOf(courses.get(position).getName()));
-        holder.txtCourseSelHoles.setText(String.valueOf(courses.get(position).getHoleCount()));
+        holder.txtCourseSelHoles.setText(String.valueOf("Holes: " + courses.get(position).getHoleCount()));
         holder.lilaCourseSelection.setOnClickListener(view -> {
             //System.out.println(holder.txtCourseSelName.getText());
             courseSelectionActivity.switchToCourseStroke(view, position);

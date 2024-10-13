@@ -10,6 +10,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.TextView;
+
+import org.w3c.dom.Text;
 
 import main.strokecounter.holeList.CourseListAdapter;
 import main.strokecounter.R;
@@ -69,18 +72,29 @@ public class EditCourseFragment extends Fragment {
                 //setCoursePars(view);
             }
         });
+        TextView txtNoCourses = view.findViewById(R.id.txtNoCourses);
         storage = storage.getInstance();
+        if(storage.getCourseList().size() == 0){
+            recyclerView = view.findViewById(R.id.rvCourseList);
+            recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+            txtNoCourses.setText("Create a Course First!");
+        }else{
+            recyclerView = view.findViewById(R.id.rvCourseList);
+            recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+            recyclerView.setAdapter(new CourseListAdapter(getContext(), storage.getCourseList().get(storage.getCourseList().size() - 1).getHoleList()));
 
-        recyclerView = view.findViewById(R.id.rvCourseList);
-        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
-        recyclerView.setAdapter(new CourseListAdapter(getContext(), storage.getCourseList().get(storage.getCourseList().size()-1).getHoleList()));
-
+        }
         return view;
     }
 
     public void onResume(){
         super.onResume();
-        recyclerView.setAdapter(new CourseListAdapter(getContext(), storage.getCourseList().get(storage.getCourseList().size()-1).getHoleList()));
+        TextView txtNoCourses = requireActivity().findViewById(R.id.txtNoCourses);
+        if(storage.getCourseList().size() != 0) {
+            recyclerView.setAdapter(new CourseListAdapter(getContext(), storage.getCourseList().get(storage.getCourseList().size() - 1).getHoleList()));
+            txtNoCourses.setText("");
+        }
+
     }
 
 }

@@ -19,5 +19,6 @@ public class CourseStrokeCountViewHolder extends RecyclerView.ViewHolder{
         holeParStroke = itemView.findViewById(R.id.txtStrokeHolePar);
         btnPlusStroke = itemView.findViewById(R.id.btnPlusStroke);
         btnMinusStroke = itemView.findViewById(R.id.btnMinusStroke);
+        strokeCount = itemView.findViewById(R.id.txtHoleStrokes);
     }
 }
