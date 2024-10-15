@@ -10,9 +10,12 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import main.strokecounter.R;
 
+//Todo: save nappi tallentaa suoritetusta coursesta scorecardin
+//Todo: funktionaalisuus suoritettujen coursejen historian näkemiseen
+
 public class CourseStrokeCountViewHolder extends RecyclerView.ViewHolder{
     TextView holeNumberStroke, holeParStroke, strokeCount;
-    Button btnPlusStroke, btnMinusStroke;
+    Button btnPlusStroke, btnMinusStroke, btnPlusPar, btnMinusPar, btnSaveScorecard;
     public CourseStrokeCountViewHolder(@NonNull View itemView) {
         super(itemView);
         holeNumberStroke = itemView.findViewById(R.id.txtStrokeHoleNumber);
@@ -20,5 +23,9 @@ public class CourseStrokeCountViewHolder extends RecyclerView.ViewHolder{
         btnPlusStroke = itemView.findViewById(R.id.btnPlusStroke);
         btnMinusStroke = itemView.findViewById(R.id.btnMinusStroke);
         strokeCount = itemView.findViewById(R.id.txtHoleStrokes);
+        btnPlusPar = itemView.findViewById(R.id.btnPlusPar);
+        btnMinusPar = itemView.findViewById(R.id.btnMinusPar);
+        //btnSaveScorecard = itemView.findViewById(R.id.btnSaveCourseScorecard);
+
     }
 }

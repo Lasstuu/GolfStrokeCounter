@@ -35,4 +35,5 @@ public class CourseSelectionActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
+
 }

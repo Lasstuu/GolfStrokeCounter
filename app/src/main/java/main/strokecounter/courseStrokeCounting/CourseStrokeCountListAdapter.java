@@ -9,17 +9,22 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 
+import main.strokecounter.Course;
 import main.strokecounter.Hole;
 import main.strokecounter.R;
+import main.strokecounter.Storage;
 
 public class CourseStrokeCountListAdapter extends RecyclerView.Adapter<CourseStrokeCountViewHolder> {
 
     private Context context;
     private ArrayList<Hole> holes = new ArrayList<Hole>();
+    private Storage storage;
+    private Course course;
 
 
-    public CourseStrokeCountListAdapter(Context context, ArrayList<Hole> holes) {
+    public CourseStrokeCountListAdapter(Context context, Course course, ArrayList<Hole> holes) {
         this.context = context;
+        this.course = course;
         this.holes = holes;
     }
 
@@ -32,10 +37,11 @@ public class CourseStrokeCountListAdapter extends RecyclerView.Adapter<CourseStr
 
     @Override
     public void onBindViewHolder(@NonNull CourseStrokeCountViewHolder holder, int position) {
+        storage = storage.getInstance();
         holder.holeNumberStroke.setText("Hole: " + String.valueOf(position + 1));
         holder.holeParStroke.setText("Par: " + String.valueOf(holes.get(position).getHolePar()));
         holder.strokeCount.setText("Strokes: " + String.valueOf(holes.get(position).getHoleStrokes()));
-       holder.btnPlusStroke.setOnClickListener(view -> {
+        holder.btnPlusStroke.setOnClickListener(view -> {
             holes.get(position).setHoleStrokes(holes.get(position).getHoleStrokes() + 1);
             notifyDataSetChanged();
         });
@@ -45,6 +51,19 @@ public class CourseStrokeCountListAdapter extends RecyclerView.Adapter<CourseStr
             }
             notifyDataSetChanged();
         });
+        holder.btnPlusPar.setOnClickListener(view -> {
+            holes.get(position).setHolePar(holes.get(position).getHolePar() + 1);
+            notifyDataSetChanged();
+        });
+        holder.btnMinusPar.setOnClickListener(view -> {
+            if(holes.get(position).getHolePar() != 0) {
+                holes.get(position).setHolePar(holes.get(position).getHolePar() + -1);
+            }
+            notifyDataSetChanged();
+        });
+//        holder.btnSaveScorecard.setOnClickListener(view -> {
+//            System.out.println(course.getName());
+//        });
     }
 
     @Override

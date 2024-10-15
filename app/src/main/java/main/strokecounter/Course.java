@@ -23,6 +23,12 @@ public class Course {
     public Integer getHoleCount() {return holeCount;}
     public ArrayList getHoleList(){return holeList;}
 
+
+    public void resetHoleStrokes() {
+        for (Hole hole : holeList) {
+            hole.setHoleStrokes(0);
+        }
+    }
     public void setName(String name) {this.name = name;}
     public void setHoleCount(Integer holeCount) {this.holeCount = holeCount;}
     public void setHoleList(ArrayList<Hole> holeList) {this.holeList = holeList;}

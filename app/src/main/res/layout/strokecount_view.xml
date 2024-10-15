@@ -7,26 +7,67 @@
     android:layout_marginBottom="5dp"
     android:background="#918E8E">
 
-    <TextView
-        android:id="@+id/txtStrokeHoleNumber"
-        android:layout_width="20dp"
+    <LinearLayout
+        android:layout_width="10dp"
         android:layout_height="match_parent"
         android:layout_weight="1"
-        android:text="HoleNumber" />
+        android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/txtStrokeHolePar"
-        android:layout_width="80dp"
+        <TextView
+            android:id="@+id/txtStrokeHoleNumber"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="HoleNumber"
+            android:textColor="#FFFFFF" />
+
+    </LinearLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="50dp"
         android:layout_height="match_parent"
-        android:layout_weight="1"
-        android:text="HolePar" />
+        android:layout_weight="1">
+
+        <TextView
+            android:id="@+id/txtStrokeHolePar"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="HolePar"
+            android:textColor="#FFFFFF"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:layout_editor_absoluteY="38dp" />
+
+        <Button
+            android:id="@+id/btnPlusPar"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="15dp"
+            android:text="+"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/btnMinusPar"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="5dp"
+            android:text="-"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/btnPlusPar"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <TextView
         android:id="@+id/txtHoleStrokes"
-        android:layout_width="60dp"
+        android:layout_width="0dp"
         android:layout_height="match_parent"
         android:layout_weight="1"
-        android:text="Strokes" />
+        android:text="Strokes"
+        android:textColor="#FFFFFF" />
 
     <LinearLayout
         android:layout_width="50dp"
@@ -43,6 +84,7 @@
                 android:id="@+id/btnPlusStroke"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
+                android:layout_marginStart="15dp"
                 android:layout_weight="1"
                 android:text="+"
                 app:layout_constraintBottom_toBottomOf="parent"

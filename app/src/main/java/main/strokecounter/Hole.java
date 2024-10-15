@@ -25,4 +25,5 @@ public class Hole {
         this.holeStrokes = holeStrokes;
     }
 
+
 }

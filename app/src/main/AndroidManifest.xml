@@ -12,6 +12,9 @@
         android:theme="@style/Theme.StrokeCounter"
         tools:targetApi="31">
         <activity
+            android:name=".completedCourse.CompletedCoursesActivity"
+            android:exported="false" />
+        <activity
             android:name=".courseStrokeCounting.CourseStrokeActivity"
             android:exported="false" />
         <activity
