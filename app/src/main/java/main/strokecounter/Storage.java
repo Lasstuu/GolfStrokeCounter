@@ -1,6 +1,7 @@
 package main.strokecounter;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 public class Storage {
     //Todo: completed courses list eli se minne "scorecardit" tallennetaan
@@ -32,4 +33,15 @@ public class Storage {
     public ArrayList<Course> getCompletedCourseList() {
         return completedCourseList;
     }
+
+    public ArrayList<Course> getCompletedCourseListByName(String name) {
+        ArrayList<Course> completedCourseNameList = new ArrayList<>();
+        for (Course course : completedCourseList) {
+            if (Objects.equals(course.getName(), name)) {
+                completedCourseNameList.add(course);
+            }
+        }
+        return completedCourseNameList;
+    }
+
 }

@@ -9,10 +9,10 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import main.strokecounter.R;
 
-public class CompletedCourseViewHolder extends RecyclerView.ViewHolder {
+public class CompletedCourseSelectionViewHolder extends RecyclerView.ViewHolder {
     TextView txtCourseSelName, txtCourseSelHoles;
     LinearLayout lilaCourseSelection;
-    public CompletedCourseViewHolder(@NonNull View itemView) {
+    public CompletedCourseSelectionViewHolder(@NonNull View itemView) {
         super(itemView);
         txtCourseSelHoles = itemView.findViewById(R.id.txtCourseSelHoles);
         txtCourseSelName = itemView.findViewById(R.id.txtCourseSelName);

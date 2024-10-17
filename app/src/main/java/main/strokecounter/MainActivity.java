@@ -6,7 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
-import main.strokecounter.completedCourse.CompletedCoursesActivity;
+import main.strokecounter.completedCourse.CompletedCoursesSelectionActivity;
 import main.strokecounter.courseSelection.CourseSelectionActivity;
 
 public class MainActivity extends AppCompatActivity {
@@ -26,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
     public void switchToCompletedCourses(View view){
-        Intent intent = new Intent(this, CompletedCoursesActivity.class);
+        Intent intent = new Intent(this, CompletedCoursesSelectionActivity.class);
         startActivity(intent);
     }
 

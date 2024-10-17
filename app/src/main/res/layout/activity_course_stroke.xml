@@ -9,8 +9,11 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvStrokeList"
-        android:layout_width="match_parent"
-        android:layout_height="700dp" />
+        android:layout_width="363dp"
+        android:layout_height="454dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/btnSaveCourseScorecard"
@@ -19,6 +22,8 @@
         android:text="Save"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/rvStrokeList" />
+        app:layout_constraintTop_toBottomOf="@+id/rvStrokeList"
+        app:layout_constraintVertical_bias="0.0" />
 </androidx.constraintlayout.widget.ConstraintLayout>
