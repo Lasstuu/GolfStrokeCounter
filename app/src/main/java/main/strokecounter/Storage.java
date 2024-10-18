@@ -4,8 +4,6 @@ import java.util.ArrayList;
 import java.util.Objects;
 
 public class Storage {
-    //Todo: completed courses list eli se minne "scorecardit" tallennetaan
-    //Todo: coursejen poistaminen
 
     private static Storage storage = null;
     private ArrayList<Course> courseList = new ArrayList<>();
@@ -34,10 +32,10 @@ public class Storage {
         return completedCourseList;
     }
 
-    public ArrayList<Course> getCompletedCourseListByName(String name) {
+    public ArrayList<Course> getCompletedCourseListByNameHoles(String name, Integer holes) {
         ArrayList<Course> completedCourseNameList = new ArrayList<>();
         for (Course course : completedCourseList) {
-            if (Objects.equals(course.getName(), name)) {
+            if (Objects.equals(course.getName(), name) && course.getHoleCount() == holes) {
                 completedCourseNameList.add(course);
             }
         }

@@ -18,9 +18,10 @@ public class CompletedCoursesActivity extends AppCompatActivity {
         setContentView(R.layout.activity_completed_courses);
         storage = storage.getInstance();
         String courseName = getIntent().getStringExtra("courseName");
+        Integer courseHoles = getIntent().getIntExtra("courseHoles", 0);
         recyclerView = findViewById(R.id.rvCourseCompletions);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        recyclerView.setAdapter(new CompletedCoursesListAdapter(this, storage.getCompletedCourseListByName(courseName)));
+        recyclerView.setAdapter(new CompletedCoursesListAdapter(this, storage.getCompletedCourseListByNameHoles(courseName, courseHoles)));
 
 
     }

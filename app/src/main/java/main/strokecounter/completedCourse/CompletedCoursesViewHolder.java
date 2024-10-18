@@ -10,13 +10,13 @@ import androidx.recyclerview.widget.RecyclerView;
 import main.strokecounter.R;
 
 public class CompletedCoursesViewHolder extends RecyclerView.ViewHolder {
-    TextView txtScore, txtStrokes;
+    TextView txtScore, txtStrokes, txtDate;
 
     public CompletedCoursesViewHolder(@NonNull View itemView) {
         super(itemView);
         txtScore = itemView.findViewById(R.id.txtScore);
         txtStrokes = itemView.findViewById(R.id.txtStrokes);
-
+        txtDate = itemView.findViewById(R.id.txtDate);
 
     }
 }

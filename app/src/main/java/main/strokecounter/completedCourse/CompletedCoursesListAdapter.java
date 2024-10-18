@@ -31,8 +31,9 @@ public class CompletedCoursesListAdapter extends RecyclerView.Adapter<CompletedC
 
     @Override
     public void onBindViewHolder(@NonNull CompletedCoursesViewHolder holder, int position) {
-        holder.txtScore.setText(String.valueOf((completedCourses.get(position).getName())));
-        holder.txtStrokes.setText(String.valueOf(completedCourses.get(position).getCourseScore()));
+        holder.txtScore.setText("Final Score: " + String.valueOf(completedCourses.get(position).getCourseScore()));
+        holder.txtStrokes.setText("All Strokes: " + String.valueOf(completedCourses.get(position).getCourseStrokes()));
+        holder.txtDate.setText("Date:\n" + String.valueOf(completedCourses.get(position).getCompletionDate()));
     }
 
     @Override

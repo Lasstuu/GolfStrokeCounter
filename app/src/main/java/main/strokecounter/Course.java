@@ -6,7 +6,7 @@ import java.util.ArrayList;
 public class Course {
     protected String name;
     protected Integer holeCount;
-
+    protected String completionDate;
     protected ArrayList <Hole> holeList = new ArrayList<Hole>();
 
     protected Integer score;
@@ -18,6 +18,14 @@ public class Course {
             this.holeList.add(hole);
         }
 
+    }
+
+    public String getCompletionDate() {
+        return completionDate;
+    }
+
+    public void setCompletionDate(String completionDate) {
+        this.completionDate = completionDate;
     }
 
     public String getName() {return name;}
@@ -32,6 +40,14 @@ public class Course {
         return score;
     }
 
+    public Integer getCourseStrokes(){
+        score = 0;
+        for(Hole hole : holeList){
+            score += hole.getHoleStrokes();
+        }
+        return score;
+    }
+
     public void resetHoleStrokes() {
         for (Hole hole : holeList) {
             hole.setHoleStrokes(0);
@@ -41,10 +57,10 @@ public class Course {
     public void setHoleCount(Integer holeCount) {this.holeCount = holeCount;}
     public void setHoleList(ArrayList<Hole> holeList) {this.holeList = holeList;}
 
-    public Course copyCourse() {
+    public Course copyCourse(String date) {
 
         Course copiedCourse = new Course(this.name, this.holeCount);
-
+        copiedCourse.setCompletionDate(date);
         copiedCourse.holeList.clear();
 
         for (Hole hole : this.holeList) {
