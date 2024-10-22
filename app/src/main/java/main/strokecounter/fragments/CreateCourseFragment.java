@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import main.strokecounter.Course;
 import main.strokecounter.R;
@@ -56,9 +57,13 @@ public class CreateCourseFragment extends Fragment {
     }
     public void createCourse(View view){
         EditText etCourseName = view.findViewById(R.id.etCourseName);
-        EditText etnHoleNumber = view.findViewById(R.id.etnHoleNumber);
 
-        Storage.getInstance().addCourse(new Course(etCourseName.getText().toString(), Integer.parseInt(etnHoleNumber.getText().toString())));
+        EditText etnHoleNumber = view.findViewById(R.id.etnHoleNumber);
+        if (Integer.parseInt(etnHoleNumber.getText().toString()) > 18){
+            Toast.makeText(this.getContext(), "Courses can have up to 18 holes!", Toast.LENGTH_SHORT).show();
+        }else {
+            Storage.getInstance().addCourse(new Course(etCourseName.getText().toString(), Integer.parseInt(etnHoleNumber.getText().toString())));
+        }
     }
 
 

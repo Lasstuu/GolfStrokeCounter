@@ -2,7 +2,9 @@ package main.strokecounter.completedCourse;
 
 import android.content.Context;
 import android.view.LayoutInflater;
+import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -37,63 +39,33 @@ public class CompletedCoursesListAdapter extends RecyclerView.Adapter<CompletedC
         holder.txtStrokes.setText("All Strokes: " + String.valueOf(completedCourses.get(position).getCourseStrokes()));
         holder.txtDate.setText("Date:\n" + String.valueOf(completedCourses.get(position).getCompletionDate()));
         holelist = completedCourses.get(position).getHoleList();
-        holder.txtHolePar1.setText(String.valueOf(holelist.get(0).getHolePar()));
-        holder.txtHolePar2.setText(String.valueOf(holelist.get(1).getHolePar()));
-        holder.txtHolePar3.setText(String.valueOf(holelist.get(2).getHolePar()));
-        holder.txtHolePar4.setText(String.valueOf(holelist.get(3).getHolePar()));
-        holder.txtHolePar5.setText(String.valueOf(holelist.get(4).getHolePar()));
-        holder.txtHolePar6.setText(String.valueOf(holelist.get(5).getHolePar()));
-        holder.txtHolePar7.setText(String.valueOf(holelist.get(6).getHolePar()));
-        holder.txtHolePar8.setText(String.valueOf(holelist.get(7).getHolePar()));
-        holder.txtHolePar9.setText(String.valueOf(holelist.get(8).getHolePar()));
-        holder.txtHolePar10.setText(String.valueOf(holelist.get(9).getHolePar()));
-        holder.txtHolePar11.setText(String.valueOf(holelist.get(10).getHolePar()));
-        holder.txtHolePar12.setText(String.valueOf(holelist.get(11).getHolePar()));
-        holder.txtHolePar13.setText(String.valueOf(holelist.get(12).getHolePar()));
-        holder.txtHolePar14.setText(String.valueOf(holelist.get(13).getHolePar()));
-        holder.txtHolePar15.setText(String.valueOf(holelist.get(14).getHolePar()));
-        holder.txtHolePar16.setText(String.valueOf(holelist.get(15).getHolePar()));
-        holder.txtHolePar17.setText(String.valueOf(holelist.get(16).getHolePar()));
-        holder.txtHolePar18.setText(String.valueOf(holelist.get(17).getHolePar()));
+        TextView[] parTextViews = new TextView[] {
+                holder.txtHolePar1, holder.txtHolePar2, holder.txtHolePar3, holder.txtHolePar4,
+                holder.txtHolePar5, holder.txtHolePar6, holder.txtHolePar7, holder.txtHolePar8,
+                holder.txtHolePar9, holder.txtHolePar10, holder.txtHolePar11, holder.txtHolePar12,
+                holder.txtHolePar13, holder.txtHolePar14, holder.txtHolePar15, holder.txtHolePar16,
+                holder.txtHolePar17, holder.txtHolePar18
+        };
 
-        holder.txtHolePar1.setText(String.valueOf(holelist.get(0).getHolePar()));
-        holder.txtHolePar2.setText(String.valueOf(holelist.get(1).getHolePar()));
-        holder.txtHolePar3.setText(String.valueOf(holelist.get(2).getHolePar()));
-        holder.txtHolePar4.setText(String.valueOf(holelist.get(3).getHolePar()));
-        holder.txtHolePar5.setText(String.valueOf(holelist.get(4).getHolePar()));
-        holder.txtHolePar6.setText(String.valueOf(holelist.get(5).getHolePar()));
-        holder.txtHolePar7.setText(String.valueOf(holelist.get(6).getHolePar()));
-        holder.txtHolePar8.setText(String.valueOf(holelist.get(7).getHolePar()));
-        holder.txtHolePar9.setText(String.valueOf(holelist.get(8).getHolePar()));
-        holder.txtHolePar10.setText(String.valueOf(holelist.get(9).getHolePar()));
-        holder.txtHolePar11.setText(String.valueOf(holelist.get(10).getHolePar()));
-        holder.txtHolePar12.setText(String.valueOf(holelist.get(11).getHolePar()));
-        holder.txtHolePar13.setText(String.valueOf(holelist.get(12).getHolePar()));
-        holder.txtHolePar14.setText(String.valueOf(holelist.get(13).getHolePar()));
-        holder.txtHolePar15.setText(String.valueOf(holelist.get(14).getHolePar()));
-        holder.txtHolePar16.setText(String.valueOf(holelist.get(15).getHolePar()));
-        holder.txtHolePar17.setText(String.valueOf(holelist.get(16).getHolePar()));
-        holder.txtHolePar18.setText(String.valueOf(holelist.get(17).getHolePar()));
+        TextView[] strokesTextViews = new TextView[] {
+                holder.txtHoleStrokes1, holder.txtHoleStrokes2, holder.txtHoleStrokes3, holder.txtHoleStrokes4,
+                holder.txtHoleStrokes5, holder.txtHoleStrokes6, holder.txtHoleStrokes7, holder.txtHoleStrokes8,
+                holder.txtHoleStrokes9, holder.txtHoleStrokes10, holder.txtHoleStrokes11, holder.txtHoleStrokes12,
+                holder.txtHoleStrokes13, holder.txtHoleStrokes14, holder.txtHoleStrokes15, holder.txtHoleStrokes16,
+                holder.txtHoleStrokes17, holder.txtHoleStrokes18
+        };
 
-        holder.txtHoleStrokes1.setText(String.valueOf(holelist.get(0).getHoleStrokes()));
-        holder.txtHoleStrokes2.setText(String.valueOf(holelist.get(1).getHoleStrokes()));
-        holder.txtHoleStrokes3.setText(String.valueOf(holelist.get(2).getHoleStrokes()));
-        holder.txtHoleStrokes4.setText(String.valueOf(holelist.get(3).getHoleStrokes()));
-        holder.txtHoleStrokes5.setText(String.valueOf(holelist.get(4).getHoleStrokes()));
-        holder.txtHoleStrokes6.setText(String.valueOf(holelist.get(5).getHoleStrokes()));
-        holder.txtHoleStrokes7.setText(String.valueOf(holelist.get(6).getHoleStrokes()));
-        holder.txtHoleStrokes8.setText(String.valueOf(holelist.get(7).getHoleStrokes()));
-        holder.txtHoleStrokes9.setText(String.valueOf(holelist.get(8).getHoleStrokes()));
-        holder.txtHoleStrokes10.setText(String.valueOf(holelist.get(9).getHoleStrokes()));
-        holder.txtHoleStrokes11.setText(String.valueOf(holelist.get(10).getHoleStrokes()));
-        holder.txtHoleStrokes12.setText(String.valueOf(holelist.get(11).getHoleStrokes()));
-        holder.txtHoleStrokes13.setText(String.valueOf(holelist.get(12).getHoleStrokes()));
-        holder.txtHoleStrokes14.setText(String.valueOf(holelist.get(13).getHoleStrokes()));
-        holder.txtHoleStrokes15.setText(String.valueOf(holelist.get(14).getHoleStrokes()));
-        holder.txtHoleStrokes16.setText(String.valueOf(holelist.get(15).getHoleStrokes()));
-        holder.txtHoleStrokes17.setText(String.valueOf(holelist.get(16).getHoleStrokes()));
-        holder.txtHoleStrokes18.setText(String.valueOf(holelist.get(17).getHoleStrokes()));
+        int numberOfHoles = holelist.size();
 
+        for (int i = 0; i < numberOfHoles; i++) {
+            parTextViews[i].setText(String.valueOf(holelist.get(i).getHolePar()));
+            strokesTextViews[i].setText(String.valueOf(holelist.get(i).getHoleStrokes()));
+        }
+
+        for (int i = numberOfHoles; i < 18; i++) {
+            parTextViews[i].setVisibility(View.GONE);
+            strokesTextViews[i].setVisibility(View.GONE);
+        }
 
     }
 
