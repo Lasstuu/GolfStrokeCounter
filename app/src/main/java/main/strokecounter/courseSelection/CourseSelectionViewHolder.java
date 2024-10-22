@@ -26,8 +26,5 @@ public class CourseSelectionViewHolder extends RecyclerView.ViewHolder{
 
 
     }
-//    public void switchToCourseStrokeHolder(View view){
-//        courseSelectionActivity.switchToCourseStroke(view);
-//    }
 
 }

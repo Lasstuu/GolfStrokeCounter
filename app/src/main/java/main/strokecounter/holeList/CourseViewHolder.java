@@ -18,10 +18,6 @@ public class CourseViewHolder extends RecyclerView.ViewHolder{
     LinearLayout lilaCourseSelection;
     public CourseViewHolder(@NonNull View itemView) {
         super(itemView);
-//        holeNumber = itemView.findViewById(R.id.txtHoleNumber);
-//        holePar = itemView.findViewById(R.id.txtHolePar);
-//        btnPlus = itemView.findViewById(R.id.btnPlus);
-//        btnMinus = itemView.findViewById(R.id.btnMinus);
         txtCourseName = itemView.findViewById(R.id.txtCourseSelName);
         txtCourseHoles = itemView.findViewById(R.id.txtCourseSelHoles);
         lilaCourseSelection = itemView.findViewById(R.id.lilaCourseSelection);

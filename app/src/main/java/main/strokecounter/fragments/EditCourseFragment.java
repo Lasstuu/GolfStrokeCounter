@@ -71,7 +71,11 @@ public class EditCourseFragment extends Fragment {
     public void onResume(){
         super.onResume();
         TextView txtNoCourses = requireActivity().findViewById(R.id.txtNoCourses);
-        if(storage.getCourseList().size() != 0) {
+        recyclerView.setAdapter(new CourseListAdapter(getContext(), storage.getCourseList()));
+        if(storage.getCourseList().size() == 0){
+            recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+            txtNoCourses.setText("Create a Course First!");
+        }else {
             recyclerView.setAdapter(new CourseListAdapter(getContext(), storage.getCourseList()));
             txtNoCourses.setText("");
         }

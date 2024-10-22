@@ -33,11 +33,8 @@ public class CourseStrokeActivity extends AppCompatActivity {
         recyclerView.setAdapter(new CourseStrokeCountListAdapter(getApplicationContext(), storage.getCourseList().get(getIntent().getIntExtra("coursePosition", 0)), storage.getCourseList().get(getIntent().getIntExtra("coursePosition", 0)).getHoleList()));
         btnSaveScorecard = findViewById(R.id.btnSaveCourseScorecard);
         btnSaveScorecard.setOnClickListener(view -> {
-            //System.out.println(storage.getCourseList().get(getIntent().getIntExtra("coursePosition", 0)).getName());
             storage.addCompletedCourse(storage.getCourseList().get(getIntent().getIntExtra("coursePosition", 0)).copyCourse(LocalDateTime.now().format(DateTimeFormatter.ofPattern("dd.MM.yyyy  HH:mm"))));
             storage.getCourseList().get(getIntent().getIntExtra("coursePosition", 0)).resetHoleStrokes();
-
-            System.out.println(storage.getCourseList().get(getIntent().getIntExtra("coursePosition", 0)).getCompletionDate());
             finish();
         });
         btnDeleteCourse = findViewById(R.id.btnDeleteCourse);
