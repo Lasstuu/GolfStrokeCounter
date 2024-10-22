@@ -1,10 +1,11 @@
-package main.strokecounter;
+package main.strokecounter.holeList;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+
+import main.strokecounter.Storage;
 
 public class CourseListActivity extends AppCompatActivity {
 
@@ -17,4 +18,5 @@ public class CourseListActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
     }
+
 }

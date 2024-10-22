@@ -1,5 +1,7 @@
 package main.strokecounter;
 
+
+
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentActivity;
@@ -12,7 +14,7 @@ public class TabPagerAdapter extends FragmentStateAdapter {
     public TabPagerAdapter(@NonNull FragmentActivity fragmentActivity) {
         super(fragmentActivity);
     }
-
+    Storage storage;
     @NonNull
     @Override
     public Fragment createFragment(int position) {

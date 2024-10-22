@@ -1,0 +1,454 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="275dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="5dp"
+        android:background="#BF9999">
+
+        <TextView
+            android:id="@+id/txtDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="48dp"
+            android:text="TextView"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.09" />
+
+        <TextView
+            android:id="@+id/txtScore"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="TextView"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.09" />
+
+        <TextView
+            android:id="@+id/txtStrokes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="TextView"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtScore"
+            app:layout_constraintVertical_bias="0.095" />
+
+        <TableLayout
+            android:layout_width="409dp"
+            android:layout_height="150dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/textView7"
+                    android:layout_width="52dp"
+                    android:layout_height="20dp"
+                    android:text="Hole:" />
+
+                <TextView
+                    android:id="@+id/textView10"
+                    android:layout_width="40dp"
+                    android:layout_height="20dp"
+                    android:text="1" />
+
+                <TextView
+                    android:id="@+id/textView11"
+                    android:layout_width="40dp"
+                    android:layout_height="20dp"
+                    android:text="2" />
+
+                <TextView
+                    android:id="@+id/textView9"
+                    android:layout_width="40dp"
+                    android:layout_height="20dp"
+                    android:text="3" />
+
+                <TextView
+                    android:id="@+id/textView6"
+                    android:layout_width="40dp"
+                    android:layout_height="20dp"
+                    android:text="4" />
+
+                <TextView
+                    android:id="@+id/textView8"
+                    android:layout_width="40dp"
+                    android:layout_height="20dp"
+                    android:text="5" />
+
+                <TextView
+                    android:id="@+id/textView5"
+                    android:layout_width="40dp"
+                    android:layout_height="20dp"
+                    android:text="6" />
+
+                <TextView
+                    android:id="@+id/textView3"
+                    android:layout_width="40dp"
+                    android:layout_height="20dp"
+                    android:text="7" />
+
+                <TextView
+                    android:id="@+id/textView4"
+                    android:layout_width="40dp"
+                    android:layout_height="20dp"
+                    android:text="8" />
+
+                <TextView
+                    android:id="@+id/textView12"
+                    android:layout_width="40dp"
+                    android:layout_height="20dp"
+                    android:text="9" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/txthole"
+                    android:layout_width="52dp"
+                    android:layout_height="20dp"
+                    android:text="Par:" />
+
+                <TextView
+                    android:id="@+id/txthole1Par"
+                    android:layout_width="40dp"
+                    android:layout_height="20dp"
+                    android:text="a" />
+
+                <TextView
+                    android:id="@+id/txthole2Par"
+                    android:layout_width="40dp"
+                    android:layout_height="20dp"
+                    android:text="a" />
+
+                <TextView
+                    android:id="@+id/txthole3Par"
+                    android:layout_width="40dp"
+                    android:layout_height="20dp"
+                    android:text="a" />
+
+                <TextView
+                    android:id="@+id/txthole4Par"
+                    android:layout_width="40dp"
+                    android:layout_height="20dp"
+                    android:text="TextView" />
+
+                <TextView
+                    android:id="@+id/txthole5Par"
+                    android:layout_width="40dp"
+                    android:layout_height="20dp"
+                    android:text="TextView" />
+
+                <TextView
+                    android:id="@+id/txthole6Par"
+                    android:layout_width="40dp"
+                    android:layout_height="20dp"
+                    android:text="TextView" />
+
+                <TextView
+                    android:id="@+id/txthole7Par"
+                    android:layout_width="40dp"
+                    android:layout_height="20dp"
+                    android:text="TextView" />
+
+                <TextView
+                    android:id="@+id/txthole8Par"
+                    android:layout_width="40dp"
+                    android:layout_height="20dp"
+                    android:text="TextView" />
+
+                <TextView
+                    android:id="@+id/txthole9Par"
+                    android:layout_width="40dp"
+                    android:layout_height="20dp"
+                    android:text="TextView" />
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/textView432"
+                    android:layout_width="52dp"
+                    android:layout_height="20dp"
+                    android:text="Strokes:" />
+
+                <TextView
+                    android:id="@+id/txthole1Strokes"
+                    android:layout_width="40dp"
+                    android:layout_height="20dp"
+                    android:text="a" />
+
+                <TextView
+                    android:id="@+id/txthole2Strokes"
+                    android:layout_width="40dp"
+                    android:layout_height="20dp"
+                    android:text="a" />
+
+                <TextView
+                    android:id="@+id/txthole3Strokes"
+                    android:layout_width="40dp"
+                    android:layout_height="20dp"
+                    android:text="a" />
+
+                <TextView
+                    android:id="@+id/txthole4Strokes"
+                    android:layout_width="40dp"
+                    android:layout_height="20dp"
+                    android:text="TextView" />
+
+                <TextView
+                    android:id="@+id/txthole5Strokes"
+                    android:layout_width="40dp"
+                    android:layout_height="20dp"
+                    android:text="TextView" />
+
+                <TextView
+                    android:id="@+id/txthole6Strokes"
+                    android:layout_width="40dp"
+                    android:layout_height="20dp"
+                    android:text="TextView" />
+
+                <TextView
+                    android:id="@+id/txthole7Strokes"
+                    android:layout_width="40dp"
+                    android:layout_height="20dp"
+                    android:text="TextView" />
+
+                <TextView
+                    android:id="@+id/txthole8Strokes"
+                    android:layout_width="40dp"
+                    android:layout_height="20dp"
+                    android:text="TextView" />
+
+                <TextView
+                    android:id="@+id/txthole9Strokes"
+                    android:layout_width="40dp"
+                    android:layout_height="20dp"
+                    android:text="TextView" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="10dp">
+
+                <TextView
+                    android:id="@+id/textView23"
+                    android:layout_width="40dp"
+                    android:layout_height="20dp"
+                    android:text="Hole:" />
+
+                <TextView
+                    android:id="@+id/textVeiw"
+                    android:layout_width="40dp"
+                    android:layout_height="20dp"
+                    android:text="10" />
+
+                <TextView
+                    android:id="@+id/textView25"
+                    android:layout_width="40dp"
+                    android:layout_height="20dp"
+                    android:text="11" />
+
+                <TextView
+                    android:id="@+id/textView26"
+                    android:layout_width="40dp"
+                    android:layout_height="20dp"
+                    android:text="12" />
+
+                <TextView
+                    android:id="@+id/textView27"
+                    android:layout_width="40dp"
+                    android:layout_height="20dp"
+                    android:text="13" />
+
+                <TextView
+                    android:id="@+id/textView28"
+                    android:layout_width="40dp"
+                    android:layout_height="20dp"
+                    android:text="14" />
+
+                <TextView
+                    android:id="@+id/textView29"
+                    android:layout_width="40dp"
+                    android:layout_height="20dp"
+                    android:text="15" />
+
+                <TextView
+                    android:id="@+id/textView30"
+                    android:layout_width="40dp"
+                    android:layout_height="20dp"
+                    android:text="16" />
+
+                <TextView
+                    android:id="@+id/textView31"
+                    android:layout_width="40dp"
+                    android:layout_height="20dp"
+                    android:text="17" />
+
+                <TextView
+                    android:id="@+id/textView32"
+                    android:layout_width="40dp"
+                    android:layout_height="20dp"
+                    android:text="18" />
+            </TableRow>
+
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/textView33"
+                    android:layout_width="40dp"
+                    android:layout_height="20dp"
+                    android:text="Par:" />
+
+                <TextView
+                    android:id="@+id/txthole10Par"
+                    android:layout_width="40dp"
+                    android:layout_height="20dp"
+                    android:text="a" />
+
+                <TextView
+                    android:id="@+id/txthole11Par"
+                    android:layout_width="40dp"
+                    android:layout_height="20dp"
+                    android:text="a" />
+
+                <TextView
+                    android:id="@+id/txthole12Par"
+                    android:layout_width="40dp"
+                    android:layout_height="20dp"
+                    android:text="a" />
+
+                <TextView
+                    android:id="@+id/txthole13Par"
+                    android:layout_width="40dp"
+                    android:layout_height="20dp"
+                    android:text="a" />
+
+                <TextView
+                    android:id="@+id/txthole14Par"
+                    android:layout_width="40dp"
+                    android:layout_height="20dp"
+                    android:text="TextView" />
+
+                <TextView
+                    android:id="@+id/txthole15Par"
+                    android:layout_width="40dp"
+                    android:layout_height="20dp"
+                    android:text="TextView" />
+
+                <TextView
+                    android:id="@+id/txthole16Par"
+                    android:layout_width="40dp"
+                    android:layout_height="20dp"
+                    android:text="TextView" />
+
+                <TextView
+                    android:id="@+id/txthole17Par"
+                    android:layout_width="40dp"
+                    android:layout_height="20dp"
+                    android:text="TextView" />
+
+                <TextView
+                    android:id="@+id/txthole18Par"
+                    android:layout_width="40dp"
+                    android:layout_height="20dp"
+                    android:text="TextView" />
+
+
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/textView43"
+                    android:layout_width="52dp"
+                    android:layout_height="20dp"
+                    android:text="Strokes:" />
+
+                <TextView
+                    android:id="@+id/txthole10Strokes"
+                    android:layout_width="40dp"
+                    android:layout_height="20dp"
+                    android:text="a" />
+
+                <TextView
+                    android:id="@+id/txthole11Strokes"
+                    android:layout_width="40dp"
+                    android:layout_height="20dp"
+                    android:text="a" />
+
+                <TextView
+                    android:id="@+id/txthole12Strokes"
+                    android:layout_width="40dp"
+                    android:layout_height="20dp"
+                    android:text="a" />
+
+                <TextView
+                    android:id="@+id/txthole13Strokes"
+                    android:layout_width="40dp"
+                    android:layout_height="20dp"
+                    android:text="TextView" />
+
+                <TextView
+                    android:id="@+id/txthole14Strokes"
+                    android:layout_width="40dp"
+                    android:layout_height="20dp"
+                    android:text="TextView" />
+
+                <TextView
+                    android:id="@+id/txthole15Strokes"
+                    android:layout_width="40dp"
+                    android:layout_height="20dp"
+                    android:text="TextView" />
+
+                <TextView
+                    android:id="@+id/txthole16Strokes"
+                    android:layout_width="40dp"
+                    android:layout_height="20dp"
+                    android:text="TextView" />
+
+                <TextView
+                    android:id="@+id/txthole17Strokes"
+                    android:layout_width="40dp"
+                    android:layout_height="20dp"
+                    android:text="TextView" />
+
+                <TextView
+                    android:id="@+id/txthole18Strokes"
+                    android:layout_width="40dp"
+                    android:layout_height="20dp"
+                    android:text="TextView" />
+            </TableRow>
+
+
+        </TableLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>
