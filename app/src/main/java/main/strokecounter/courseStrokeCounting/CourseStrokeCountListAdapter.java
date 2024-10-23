@@ -61,9 +61,7 @@ public class CourseStrokeCountListAdapter extends RecyclerView.Adapter<CourseStr
             }
             notifyDataSetChanged();
         });
-//        holder.btnSaveScorecard.setOnClickListener(view -> {
-//            System.out.println(course.getName());
-//        });
+
     }
 
     @Override

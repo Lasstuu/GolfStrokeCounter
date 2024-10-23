@@ -35,12 +35,20 @@ public class CourseStrokeActivity extends AppCompatActivity {
         btnSaveScorecard.setOnClickListener(view -> {
             storage.addCompletedCourse(storage.getCourseList().get(getIntent().getIntExtra("coursePosition", 0)).copyCourse(LocalDateTime.now().format(DateTimeFormatter.ofPattern("dd.MM.yyyy  HH:mm"))));
             storage.getCourseList().get(getIntent().getIntExtra("coursePosition", 0)).resetHoleStrokes();
+            storage.saveCourses(getApplicationContext());
             finish();
         });
         btnDeleteCourse = findViewById(R.id.btnDeleteCourse);
         btnDeleteCourse.setOnClickListener(view -> {
             storage.getCourseList().remove(getIntent().getIntExtra("coursePosition", 0));
+            storage.saveCourses(getApplicationContext());
             finish();
         });
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        storage.saveCourses(getApplicationContext());
     }
 }

@@ -1,6 +1,8 @@
 package main.strokecounter;
 
-public class Hole {
+import java.io.Serializable;
+
+public class Hole implements Serializable {
     protected Integer holePar, holeStrokes;
 
 

@@ -16,11 +16,7 @@ import main.strokecounter.Course;
 import main.strokecounter.R;
 import main.strokecounter.Storage;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link CreateCourseFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
+
 public class CreateCourseFragment extends Fragment {
 
     public CreateCourseFragment() {
@@ -44,7 +40,6 @@ public class CreateCourseFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_create_course, container, false);
         Button btnCreateCourse = view.findViewById(R.id.btnCreateCourse);
         btnCreateCourse.setOnClickListener(new View.OnClickListener() {
@@ -63,6 +58,7 @@ public class CreateCourseFragment extends Fragment {
             Toast.makeText(this.getContext(), "Courses can have up to 18 holes!", Toast.LENGTH_SHORT).show();
         }else {
             Storage.getInstance().addCourse(new Course(etCourseName.getText().toString(), Integer.parseInt(etnHoleNumber.getText().toString())));
+            Storage.getInstance().saveCourses(getContext());
         }
     }
 

@@ -3,7 +3,7 @@ package main.strokecounter;
 import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Course {
+public class Course implements Serializable {
     protected String name;
     protected Integer holeCount;
     protected String completionDate;

@@ -38,8 +38,10 @@ public class CompletedCourseSelectionListAdapter extends RecyclerView.Adapter<Co
     @Override
     public void onBindViewHolder(@NonNull CompletedCourseSelectionViewHolder holder, int position) {
         storage = storage.getInstance();
+        System.out.println(storage.getCourseList().get(position).getName());
+        System.out.println(storage.getCourseList().get(position).getHoleCount());
         holder.txtCourseSelName.setText(String.valueOf(courses.get(position).getName()));
-        holder.txtCompletions.setText("Course Completions: " + String.valueOf((storage.getCompletedCourseListByNameHoles(courses.get(position).getName(), courses.get(position).getHoleCount())).size()));
+        holder.txtCompletions.setText("Course Completions: " + String.valueOf((storage.getCompletedCourseListByNameHoles(storage.getCourseList().get(position).getName(), storage.getCourseList().get(position).getHoleCount())).size()));
         holder.txtCourseSelHoles.setText(String.valueOf("Holes: " + courses.get(position).getHoleCount()));
         holder.lilaCourseSelection.setOnClickListener(view -> {
             Intent intent = new Intent(context, CompletedCoursesActivity.class);
